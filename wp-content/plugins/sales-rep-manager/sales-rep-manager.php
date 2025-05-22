@@ -52,29 +52,6 @@ function update_sales_representative_field($user_id) {
 add_action('profile_update', 'update_sales_representative_field');
 add_action('user_register', 'update_sales_representative_field');
 
-// Function to display Sales Representative field on user profile page
-function show_sales_representative_field($user) {
-    // Get the Sales Representative field value
-    $sales_rep_name = get_user_meta($user->ID, 'sales_representative', true);
-    ?>
-    <h3><?php _e("Sales Representative", "textdomain"); ?></h3>
-
-    <table class="form-table">
-        <tr>
-            <th><label for="sales_representative"><?php _e("Sales Representative", "textdomain"); ?></label></th>
-            <td>
-                <input type="text" name="sales_representative" id="sales_representative" value="<?php echo esc_attr($sales_rep_name); ?>" class="regular-text" readonly />
-                <span class="description"><?php _e("This is the Sales Representative assigned to the user based on their state and country."); ?></span>
-            </td>
-        </tr>
-    </table>
-    <?php
-}
-
-// Hook into user profile display
-add_action('show_user_profile', 'show_sales_representative_field');
-add_action('edit_user_profile', 'show_sales_representative_field');
-
 // Function to create the admin menu for Sales Representatives settings
 add_action('admin_menu', 'sales_rep_admin_menu');
 
