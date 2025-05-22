@@ -4,7 +4,6 @@ Plugin Name: Sales Representative Management
 Description: Manage and assign Sales Representatives based on state and country.
 Version: 1.0
 Author: Sunaina Udo
-Test pull request
 */
 
 function get_sales_representative_by_state_and_country($state, $country) {
